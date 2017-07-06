@@ -22,7 +22,28 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+class Thing
+  include BenchmarkGC
+
+  def method_name
+    do_some_stuff
+  end
+end
+
+Thing.new.bcheck(logger: false) { method_name }
+
+Parameter options (all are optional):
+  name: (string) Print the name of the benchmarked code
+  times: (integer) Number of times to run the benchmarked code in succession
+  logger: (boolean) ActiveRecord::Base.logger should log
+
+bcheck returns the value of the benchmarked code, making this possible:
+class Thing
+...
+  def method_name
+    bcheck { do_some_stuff }
+  end
+end
 
 ## Development
 
@@ -38,4 +59,3 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/[USERN
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-
