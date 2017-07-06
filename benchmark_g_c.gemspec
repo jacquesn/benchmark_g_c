@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["jnicholasjacques@gmail.com"]
 
   spec.summary       = %q{Benchmark Garbage Collect stats relevant to memory optimization.}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/jacquesn/benchmark_g_c"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").reject do |f|
