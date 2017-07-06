@@ -20,7 +20,7 @@ module BenchmarkGC
     @@total_objects_allocated += objects
   end
 
-  def bcheck(options)
+  def bcheck(options = {})
     default_options = { name: '', times: 1, logger: true }
     options = default_options.merge(options)
     name = options[:name]
