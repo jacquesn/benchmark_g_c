@@ -26,8 +26,9 @@ module BenchmarkGC
     name = options[:name]
     times = options[:times]
     logger = options[:logger]
-    # This should first check if gem is in Rails environment
-    ActiveRecord::Base.logger = nil unless logger
+    if defined? Rails.env
+      ActiveRecord::Base.logger = nil unless logger
+    end
     results = []
     return_value = nil
     times.times do
